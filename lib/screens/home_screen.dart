@@ -2,6 +2,7 @@ import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:cloth_ui/resources/asset_manager.dart';
 import 'package:cloth_ui/resources/color_manager.dart';
 import 'package:cloth_ui/resources/style_manager.dart';
+import 'package:cloth_ui/screens/checkout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -96,8 +97,13 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SvgPicture.asset(IconAssets.filter,
-                        height: 48, width: 49),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => CheckoutScreen()));
+                      },
+                      child: SvgPicture.asset(IconAssets.filter,
+                          height: 48, width: 49),
+                    ),
                   ],
                 ),
               ),
@@ -159,7 +165,7 @@ class HomeScreen extends StatelessWidget {
                               Positioned(
                                 child: GestureDetector(
                                   onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => const DetailScreen()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  DetailScreen(image: images[index],)));
                                   },
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(12),

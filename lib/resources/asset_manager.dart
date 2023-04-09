@@ -7,6 +7,7 @@ class ImageAssets {
   static const String cloth3 = '$IMAGE_PATH/cloth3.png';
   static const String cloth4 = '$IMAGE_PATH/cloth4.png';
   static const String cloth5 = '$IMAGE_PATH/cloth5.png';
+  static const String visa = '$IMAGE_PATH/visa.png';
 }
 
 class IconAssets {
@@ -19,4 +20,6 @@ class IconAssets {
   static const String watch = '$ICONS_PATH/watch.png';
   static const String backArrow = '$ICONS_PATH/arrowBack.png';
   static const String minus = '$ICONS_PATH/minus.png';
+  static const String menu = '$ICONS_PATH/Menu.svg';
+  static const String downArrow = '$ICONS_PATH/arrow-down.png';
 }
