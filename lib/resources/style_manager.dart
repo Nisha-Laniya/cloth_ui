@@ -1,7 +1,6 @@
-import 'dart:ui';
-import 'package:flutter/src/painting/text_style.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'color_manager.dart';
+import 'resources.dart';
 
 class FontWeightManager {
   static const FontWeight light = FontWeight.w300;

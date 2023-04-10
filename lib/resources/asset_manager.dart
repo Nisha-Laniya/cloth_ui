@@ -2,11 +2,11 @@ const String ICONS_PATH = 'assets/icons';
 const String IMAGE_PATH = 'assets/images';
 
 class ImageAssets {
-  static const String cloth1 = '$IMAGE_PATH/cloth1.png';
-  static const String cloth2 = '$IMAGE_PATH/cloth2.png';
-  static const String cloth3 = '$IMAGE_PATH/cloth3.png';
-  static const String cloth4 = '$IMAGE_PATH/cloth4.png';
-  static const String cloth5 = '$IMAGE_PATH/cloth5.png';
+  static const String cloth1 = '$IMAGE_PATH/frame1.png';
+  static const String cloth2 = '$IMAGE_PATH/frame2.png';
+  static const String cloth3 = '$IMAGE_PATH/frame3.png';
+  static const String cloth4 = '$IMAGE_PATH/frame4.png';
+  static const String cloth5 = '$IMAGE_PATH/frame5.png';
   static const String visa = '$IMAGE_PATH/visa.png';
 }
 
