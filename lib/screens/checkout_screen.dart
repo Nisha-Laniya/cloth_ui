@@ -151,7 +151,7 @@ class CheckoutScreen extends StatelessWidget {
                                   ),
                                   const Icon(
                                     Icons.add,
-                                    color: ColorManager.grey,
+                                    color: ColorManager.white,
                                     size: 20,
                                   ),
                                 ],
@@ -178,21 +178,14 @@ class CheckoutScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Material(
-          elevation: 5,
-          shape: const CircleBorder(),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: CircleAvatar(
-              backgroundColor: ColorManager.white,
-              child: Image.asset(
-                IconAssets.backArrow,
-                height: 24,
-              ),
+        GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+              IconAssets.backArrow,
+              height: 35,
             ),
-          ),
         ),
         const Text('Checkout'),
         SvgPicture.asset(IconAssets.menu),

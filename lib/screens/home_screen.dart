@@ -18,21 +18,17 @@ class HomeScreen extends StatelessWidget {
         Provider.of<BottomNavigationProvider>(context, listen: false);
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              buildTitle(),
-              buildSearch(context),
-              buildTabBar(),
-              const SizedBox(
-                height: 32,
-              ),
-              buildGridView(),
-              const SizedBox(
-                height: 70,
-              )
-            ],
-          ),
+        child: Column(
+          children: [
+            buildTitle(),
+            buildSearch(context),
+            buildTabBar(),
+            const SizedBox(
+              height: 32,
+            ),
+            buildGridView(),
+
+          ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -89,75 +85,76 @@ class HomeScreen extends StatelessWidget {
   Padding buildGridView() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: MasonryGridView.count(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          crossAxisCount: 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 23,
-          itemCount: images.length,
-          itemBuilder: (context, index) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Stack(
-                  children: [
-                    Positioned(
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DetailScreen(
-                                        image: images[index],
-                                      )));
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.asset(images[index]),
+      child: SizedBox(
+        height: 520,
+        child: MasonryGridView.count(
+            crossAxisCount: 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 23,
+            itemCount: images.length,
+            itemBuilder: (context, index) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Stack(
+                    children: [
+                      Positioned(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DetailScreen(
+                                          image: images[index],
+                                        )));
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.asset(images[index]),
+                          ),
                         ),
                       ),
-                    ),
-                    const Positioned(right: 12, top: 12, child: LikeButton()),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8, bottom: 4),
-                  child:
-                      Text('Modern light Clothes', style: getSemiBoldStyle()),
-                ),
-                Text(
-                  'Dress modern',
-                  style:
-                      getRegularStyle(color: ColorManager.grey2, fontSize: 12),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('\$212.99', style: getSemiBoldStyle()),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.star,
-                            color: ColorManager.starColor,
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            '5.0',
-                            style: getRegularStyle(fontSize: 12),
-                          )
-                        ],
-                      )
+                      const Positioned(right: 12, top: 12, child: LikeButton()),
                     ],
                   ),
-                )
-              ],
-            );
-          }),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8, bottom: 4),
+                    child:
+                        Text('Modern light Clothes', style: getSemiBoldStyle()),
+                  ),
+                  Text(
+                    'Dress modern',
+                    style:
+                        getRegularStyle(color: ColorManager.grey2, fontSize: 12),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('\$212.99', style: getSemiBoldStyle()),
+                        Row(
+                          children: [
+                            const Icon(
+                              Icons.star,
+                              color: ColorManager.starColor,
+                            ),
+                            const SizedBox(
+                              width: 8,
+                            ),
+                            Text(
+                              '5.0',
+                              style: getRegularStyle(fontSize: 12),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              );
+            }),
+      ),
     );
   }
 
@@ -234,7 +231,7 @@ class HomeScreen extends StatelessWidget {
             Tab(
               text: 'Dress',
               icon: Image.asset(
-                IconAssets.clothes,
+                ImageAssets.clothes,
                 color: ColorManager.black,
               ),
             ),

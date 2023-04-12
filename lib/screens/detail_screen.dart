@@ -226,26 +226,26 @@ class DetailScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Positioned(
-            left: 12,
-            top: 12,
-            child: Material(
-              elevation: 5,
-              shape: const CircleBorder(),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  backgroundColor: ColorManager.white,
-                  child: Image.asset(
-                    IconAssets.backArrow,
-                    height: 24,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // Positioned(
+          //   left: 12,
+          //   top: 12,
+          //   child: Material(
+          //     elevation: 5,
+          //     shape: const CircleBorder(),
+          //     child: GestureDetector(
+          //       onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //       child: CircleAvatar(
+          //         backgroundColor: ColorManager.white,
+          //         child: Image.asset(
+          //           IconAssets.backArrow,
+          //           height: 24,
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
           Positioned(
             right: 12,
             top: 12,
